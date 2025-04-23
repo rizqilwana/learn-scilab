@@ -1,0 +1,10 @@
+clear;clc;clf;
+s=%s;
+tf1=syslin('c',9/(s+3));
+t=0:0.1:5;
+ss1step=csim('step',t,tf1);
+plot2d(t,ss1step,5);
+xgrid();
+xlabel("$time$","Fontsize",5);
+ylabel("$y(t)$","Fontsize",5);
+title('$step\ response\ of\ G(s)=\frac{9}{s+3}$','Fontsize',4);

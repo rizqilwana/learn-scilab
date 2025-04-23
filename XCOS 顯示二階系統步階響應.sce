@@ -1,0 +1,10 @@
+clear;clc;clf;
+s=%s;
+tf1=syslin('c',100/(s^2+10*s+100));
+t=0:0.01:2;
+ss1step=csim('step',t,tf1);
+plot2d(t,ss1step,2);
+xgrid();
+xlabel("$time$", "FontSize",5);
+ylabel("$y(t)$", "FontSize",5);
+title('$step\ response\ of\ G(s)=\frac{100}{s^2+10s+100}$','fontsize',4);

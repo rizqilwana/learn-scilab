@@ -1,0 +1,11 @@
+clear;
+clc;
+clf;
+s=%s;
+zeta=[0.1];
+wn=5;
+num=ones(1,length(zeta));
+den=s^2+2*zeta*wn*s+wn^2;
+tf1=syslin('c',num,den);
+bode(tf1',0.1,10,"rad");
+title('$Bode Plot\ of\ G(s)=\frac{1}{s^2+0.8s+16}$','fontsize',4);

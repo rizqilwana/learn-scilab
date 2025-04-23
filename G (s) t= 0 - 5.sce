@@ -1,0 +1,15 @@
+clear;clc;clf;
+s=%s;
+num=9;
+den=s^2+2*s+9;
+str=msprintf("num = %s\nden = %s",string(num),pol2str(den));
+disp(str);
+tf1=syslin('c',num,den);
+disp("tf1 = ",tf1);
+t=0:0.05:5;
+ss1step=csim('step',t,tf1);
+plot2d(t,ss1step,2);
+xgrid();
+xlabel("$time$", "FontSize",5);
+ylabel("$y(t)$", "FontSize",5);
+title('$step\ response\ of\ G(s)=\frac{9}{s^2+2s+9}$','fontsize',4);
